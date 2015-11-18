@@ -1,2 +1,4 @@
+.idea/
+.vagrant/
+.DS_Store
 _site/
-.sass-cache/
