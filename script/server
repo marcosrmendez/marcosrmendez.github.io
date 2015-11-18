@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# script/server: Launch the application and any extra required processes
+#                locally.
+
+set -e
+set -o errexit
+set -o errtrace
+
+cd $(dirname $0)/..
+
+source script/settings
+
+PWD=$HOME_DIR jekyll server --watch --detach --port 4000
