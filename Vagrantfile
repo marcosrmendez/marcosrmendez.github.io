@@ -73,6 +73,6 @@ Vagrant.configure(2) do |config|
   # SHELL
 
   config.vm.provision "shell", privileged: true, path: "script/vagrant"
-  config.vm.provision "shell", privileged: true, path: "script/server", run: "always"
+  config.vm.provision "shell", privileged: false, path: "script/server", run: "always"
 
 end
