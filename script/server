@@ -8,7 +8,13 @@ set -o errexit
 set -o errtrace
 
 cd $(dirname $0)/..
+ROOT_DIR=$PWD
 
-source script/settings
+if [ -f "$ROOT_DIR/script/settings" ]
+then
+    source $ROOT_DIR/script/settings
+else
+    source /vagrant/script/settings
+fi
 
-PWD=$HOME_DIR jekyll server --watch --detach --port 4000
+cd $HOME_DIR && jekyll server --watch --detach --port 4000
